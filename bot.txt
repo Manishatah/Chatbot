@@ -1,0 +1,25 @@
+from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
+import os
+
+bot = Chatbot('bot')
+bot.set_trainer(ListTrainer)
+
+#def setup():
+     		 #chatbot = ChatBot('Bot',
+     		 #storage_adapter='chatterbot.storage.SQLStorageAdapter',
+		 #trainer='chatterbot.trainers.ListTrainer')
+for files in os.listdir('D:/demo projects/Chatbot_Project-master/data/'):
+        Data = open('D:/demo projects/Chatbot_Project-master/data/' + files,'r').readlines()
+	bot.train(data)        
+		#chatbot.set_trainer(ListTrainer)
+        	#chatbot.train(convData)
+		#print("Training completed")
+while True:
+	message = input('you:')
+	reply = bot.get_response(message)
+	print('chatbot : ',reply)
+if message.strip() == 'bye':
+
+
+		#setup()
